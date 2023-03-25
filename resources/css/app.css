@@ -4,7 +4,7 @@
 
 
 .card{
-    @apply bg-white rounded overflow-hidden relative
+    @apply bg-white rounded overflow-hidden shadow-md relative
 }
 
 .badge{

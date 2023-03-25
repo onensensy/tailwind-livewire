@@ -10,7 +10,7 @@
     <title>Tailwind</title>
 </head>
 
-<body class="text-gray-700 ">
+<body class="text-gray-600 ">
     <div class="grid md:grid-cols-3"> {{-- Content Wrapper --}}
         <div class="md:col-span-1">
             <nav>
@@ -18,7 +18,7 @@
                     <h1 class="font-bold uppercase p-4 border-b border-gray-100">
                         {{-- <a href="/index" class="text-green-500 sm:text-red-500 lg:text-blue-500 "> Food Ninja</a> --}}
                         {{-- <a href="/index" class="text-sm mb:text-xl"> Food Ninja</a> --}}
-                        <a href="/index" class=""> Food Ninja</a>
+                        <a href="/index" class="hover:text-red-700"> Food Ninja</a>
                     </h1>
                 </div>
 
@@ -44,8 +44,10 @@
 
         <main class="px-16 py-6 bg-gray-100 md:col-span-2">
             <div class="flex justify-center md:justify-end">
-                <a href="#" class="btn text-primary border-primary md:border-2">Login</a>
-                <a href="#" class="btn text-primary ml-2 border-primary md:border-2">Signup</a>
+                <a href="#"
+                    class="btn text-primary border-primary md:border-2 hover:bg-primary hover:text-white">Login</a>
+                <a href="#"
+                    class="btn text-primary ml-2 border-primary md:border-2 hover:bg-primary hover:text-white">Signup</a>
             </div>
 
             {{-- <div class="flex items-end justify-center">
@@ -62,7 +64,8 @@
                 <h4 class="font-bold mt-12  pb-2 border-b border-gray-200">Latest Recipes</h4>
                 <div class="mt-8 grid lg:grid-cols-3 md:grid-cols-2 gap-10">
                     {{-- cards go here --}}
-                    <div class="card">
+
+                    <div class="card hover:shadow-lg">
                         <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
                         <div class="m-4">
                             <span class="font-bold">Fried Beans Chilly Stew</span>
@@ -73,7 +76,7 @@
                             <span>25 mins</span>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card hover:shadow-lg">
                         <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
                         <div class="m-4">
                             <span class="font-bold">Fried Beans Chilly Stew</span>
@@ -84,18 +87,7 @@
                             <span>25 mins</span>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
-                        <div class="m-4">
-                            <span class="font-bold">Fried Beans Chilly Stew</span>
-                            <span class="block text-gray-500 text-sm">Recipe by Mario</span>
-                        </div>
-                        <div class="badge">
-
-                            <span>25 mins</span>
-                        </div>
-                    </div>
-                    <div class="card">
+                    <div class="card hover:shadow-lg">
                         <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
                         <div class="m-4">
                             <span class="font-bold">Fried Beans Chilly Stew</span>
@@ -109,12 +101,13 @@
                 </div>
 
                 <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Most popular</h4>
-                <div>
+                <div class="mt-8 grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+
                     {{-- Cards go here --}}
                 </div>
 
                 <div class="flex justify-center"> {{-- flexbox --}}
-                    <div class="btn bg-secondary-100 text-secondary-200">Load More...</div>
+                    <div class="btn bg-secondary-100 text-secondary-200 hover:shadow-inner">Load More...</div>
                 </div>
             </div>
         </main>
