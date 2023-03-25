@@ -42,7 +42,7 @@
             </nav>
         </div>{{-- End nav --}}
 
-        <main class="px-16 py-6">
+        <main class="px-16 py-6 bg-gray-100">
             <div class="flex justify-center md:justify-end">
                 <a href="#" class="text-primary">Login</a>
                 <a href="#" class="text-primary ml-2">Signup</a>
@@ -62,11 +62,11 @@
                 <h4 class="font-bold mt-12  pb-2 border-b border-gray-200">Latest Recipes</h4>
                 <div>
                     {{-- cards go here --}}
-                    <div>
-                        <img src="images/food.jpg" alt="">
-                        <div>
-                            <span>Fried Beans Chilly Stew</span>
-                            <span>Recipe by Mario</span>
+                    <div class=" bg-white rounded overflow-hidden">
+                        <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
+                        <div class="m-4">
+                            <span class="font-bold">Fried Beans Chilly Stew</span>
+                            <span class="block text-gray-500 text-sm">Recipe by Mario</span>
                         </div>
                     </div>
                 </div>
