@@ -11,7 +11,7 @@
 </head>
 
 <body class="text-gray-600 ">
-    <div class="grid md:grid-cols-3"> {{-- Content Wrapper --}}
+    <div class="grid md:grid-cols-8"> {{-- Content Wrapper --}}
         <div class="md:col-span-1 md:flex md:justify-end">
             <nav class="text-right">
                 <div class="flex items-center justify-between ">
@@ -25,8 +25,8 @@
                     </div>
                 </div>
                 <ul class="text-sm  mt-6 hidden md:block" id="menu">
-                    <li class="py-1 text-gray-700 font-bold border-r-4 border-primary">
-                        <a class="px-8 flex justify-end" href="#">
+                    <li class="py-1 text-gray-700 font-bold border-r-4 border-primary bg-red-100">
+                        <a class="px-8 flex justify-end " href="#">
                             <span>HOME</span>
                         </a>
                     </li>
@@ -48,7 +48,7 @@
             </nav>
         </div>{{-- End nav --}}
 
-        <main class="px-16 py-6 bg-gray-100 md:col-span-2">
+        <main class="px-16 py-6 bg-gray-100 md:col-span-7">
             <div class="flex justify-center md:justify-end">
                 <a href="#"
                     class="btn text-primary border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-500">Login</a>
