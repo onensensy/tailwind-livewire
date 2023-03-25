@@ -2061,6 +2061,15 @@ module.exports = {
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+var burger = document.querySelector("#burger");
+var menu = document.querySelector("#menu");
+burger.addEventListener("click", function () {
+  if (menu.classList.contains("hidden")) {
+    menu.classList.remove("hidden");
+  } else {
+    menu.classList.add("hidden");
+  }
+});
 
 /***/ }),
 

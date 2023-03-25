@@ -14,15 +14,17 @@
     <div class="grid md:grid-cols-3"> {{-- Content Wrapper --}}
         <div class="md:col-span-1 md:flex md:justify-end">
             <nav class="text-right">
-                <div>
+                <div class="flex items-center justify-between ">
                     <h1 class="font-bold uppercase p-4 border-b border-gray-100">
                         {{-- <a href="/index" class="text-green-500 sm:text-red-500 lg:text-blue-500 "> Food Ninja</a> --}}
                         {{-- <a href="/index" class="text-sm mb:text-xl"> Food Ninja</a> --}}
                         <a href="/index" class="hover:text-red-700"> Food Ninja</a>
                     </h1>
+                    <div class=" px-4 cursor-pointer md:hidden" id="burger">
+                        MENU
+                    </div>
                 </div>
-
-                <ul class="text-sm  mt-6">
+                <ul class="text-sm  mt-6 hidden md:block" id="menu">
                     <li class="py-1 text-gray-700 font-bold border-r-4 border-primary">
                         <a class="px-8 flex justify-end" href="#">
                             <span>HOME</span>
@@ -116,6 +118,7 @@
             </div>
         </main>
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
