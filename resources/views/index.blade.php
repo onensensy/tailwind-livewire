@@ -10,7 +10,7 @@
     <title>Tailwind</title>
 </head>
 
-<body class="text-gray-700">
+<body class="text-gray-700 ">
     <div> {{-- Content Wrapper --}}
         <div>
             <nav>
@@ -40,9 +40,15 @@
         </div>{{-- End nav --}}
 
         <main class="px-16 py-6">
-            <div>
+            <div class="flex justify-end">
                 <a href="#" class="text-primary">Login</a>
-                <a href="#" class="text-primary">Signup</a>
+                <a href="#" class="text-primary ml-2">Signup</a>
+            </div>
+
+            <div class="flex items-end justify-center">
+                <div class="bg-red-500 h-4 w-6"></div>
+                <div class="bg-blue-500 h-8 w-6"></div>
+                <div class="bg-green-500 h-12 w-6"></div>
             </div>
             <header>
                 <h2 class="text-gray-700 text-6xl font-semibold">Recipes</h2>
@@ -67,7 +73,7 @@
                     {{-- Cards go here --}}
                 </div>
 
-                <div>
+                <div class="flex justify-center"> {{-- flexbox --}}
                     <div class="bg-secondary-100 text-secondary-200">Load More...</div>
                 </div>
             </div>
