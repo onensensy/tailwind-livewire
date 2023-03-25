@@ -22,3 +22,6 @@ Route::get('/home', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+Route::get('/index', function () {
+    return view('index');
+});
