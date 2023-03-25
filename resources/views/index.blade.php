@@ -62,19 +62,50 @@
                 <h4 class="font-bold mt-12  pb-2 border-b border-gray-200">Latest Recipes</h4>
                 <div>
                     {{-- cards go here --}}
-                    <div class=" bg-white rounded overflow-hidden relative">
+                    <div class="card">
                         <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
                         <div class="m-4">
                             <span class="font-bold">Fried Beans Chilly Stew</span>
                             <span class="block text-gray-500 text-sm">Recipe by Mario</span>
                         </div>
-                        <div
-                            class="bg-secondary-100 text-secondary-200 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
+                        <div class="badge">
 
                             <span>25 mins</span>
                         </div>
                     </div>
+                    <div class="card">
+                        <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
+                        <div class="m-4">
+                            <span class="font-bold">Fried Beans Chilly Stew</span>
+                            <span class="block text-gray-500 text-sm">Recipe by Mario</span>
+                        </div>
+                        <div class="badge">
 
+                            <span>25 mins</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
+                        <div class="m-4">
+                            <span class="font-bold">Fried Beans Chilly Stew</span>
+                            <span class="block text-gray-500 text-sm">Recipe by Mario</span>
+                        </div>
+                        <div class="badge">
+
+                            <span>25 mins</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
+                        <div class="m-4">
+                            <span class="font-bold">Fried Beans Chilly Stew</span>
+                            <span class="block text-gray-500 text-sm">Recipe by Mario</span>
+                        </div>
+                        <div class="badge">
+
+                            <span>25 mins</span>
+                        </div>
+                    </div>
                 </div>
 
                 <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Most popular</h4>
