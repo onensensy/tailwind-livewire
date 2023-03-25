@@ -11,8 +11,8 @@
 </head>
 
 <body class="text-gray-700 ">
-    <div> {{-- Content Wrapper --}}
-        <div>
+    <div class="grid md:grid-cols-3"> {{-- Content Wrapper --}}
+        <div class="md:col-span-1">
             <nav>
                 <div>
                     <h1 class="font-bold uppercase p-4 border-b border-gray-100">
@@ -42,7 +42,7 @@
             </nav>
         </div>{{-- End nav --}}
 
-        <main class="px-16 py-6 bg-gray-100">
+        <main class="px-16 py-6 bg-gray-100 md:col-span-2">
             <div class="flex justify-center md:justify-end">
                 <a href="#" class="text-primary">Login</a>
                 <a href="#" class="text-primary ml-2">Signup</a>
@@ -60,7 +60,7 @@
 
             <div>
                 <h4 class="font-bold mt-12  pb-2 border-b border-gray-200">Latest Recipes</h4>
-                <div>
+                <div class="mt-8 grid lg:grid-cols-3 md:grid-cols-2 gap-10">
                     {{-- cards go here --}}
                     <div class="card">
                         <img src="images/food.jpg" class="w-full h-32 sm:h-48 object-cover" alt="Stew">
