@@ -44,8 +44,8 @@
 
         <main class="px-16 py-6 bg-gray-100 md:col-span-2">
             <div class="flex justify-center md:justify-end">
-                <a href="#" class="text-primary">Login</a>
-                <a href="#" class="text-primary ml-2">Signup</a>
+                <a href="#" class="btn text-primary border-primary md:border-2">Login</a>
+                <a href="#" class="btn text-primary ml-2 border-primary md:border-2">Signup</a>
             </div>
 
             {{-- <div class="flex items-end justify-center">
@@ -114,7 +114,7 @@
                 </div>
 
                 <div class="flex justify-center"> {{-- flexbox --}}
-                    <div class="bg-secondary-100 text-secondary-200">Load More...</div>
+                    <div class="btn bg-secondary-100 text-secondary-200">Load More...</div>
                 </div>
             </div>
         </main>
