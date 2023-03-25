@@ -25,3 +25,6 @@ Route::get('/dashboard', function () {
 Route::get('/index', function () {
     return view('index');
 });
+Route::get('/crud', function () {
+    return view('crud');
+});
