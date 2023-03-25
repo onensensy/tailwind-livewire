@@ -12,8 +12,8 @@
 
 <body class="text-gray-600 ">
     <div class="grid md:grid-cols-3"> {{-- Content Wrapper --}}
-        <div class="md:col-span-1">
-            <nav>
+        <div class="md:col-span-1 md:flex md:justify-end">
+            <nav class="text-right">
                 <div>
                     <h1 class="font-bold uppercase p-4 border-b border-gray-100">
                         {{-- <a href="/index" class="text-green-500 sm:text-red-500 lg:text-blue-500 "> Food Ninja</a> --}}
@@ -22,19 +22,23 @@
                     </h1>
                 </div>
 
-                <ul>
-                    <li class="font-bold">
-                        <a class="" href="#">
+                <ul class="text-sm  mt-6">
+                    <li class="py-1 text-gray-700 font-bold border-r-4 border-primary">
+                        <a class="px-8 flex justify-end" href="#">
                             <span>HOME</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li class="py-1 text-gray-700 font-bold border-r-4 border-white">
+
+                        <a class="px-8 flex justify-end" href="#">
+
                             <span>ABOUT</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li class="py-1 text-gray-700 font-bold border-r-4 border-white">
+
+                        <a class="px-8 flex justify-end" href="#">
+
                             <span>CONTACT</span>
                         </a>
                     </li>
