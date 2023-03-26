@@ -28,8 +28,12 @@
         <div class=""> {{-- Main contents --}}
             <div class=" flex m-6 justify-center">
                 <div class="flex p-6 justify-start items-center gap-6 rounded-full bg-gray-300 text-dark">
-                    <input class="rounded-full bg-white p-2">
-                    <button class=" rounded-full bg-gray-700 p-2 text-white">Add</button>
+                    <form action="/crud/add" method="POST">
+                        @csrf
+                        <input class="rounded-full bg-white p-2" name="post">
+                        <button type="submit"
+                            class=" rounded-full bg-gray-700 p-2 text-white hover:bg-gray-600 ">Add</button>
+                    </form>
                 </div>
             </div>
             <div class="flex m-6 p-4 justify-center ">
@@ -40,11 +44,20 @@
                         <td class="p-2">Item</td>
                         <td class="p-2">Added At</td>
                     </tr>
-                    <tr>
-                        <td class="p-2">1</td>
-                        <td class="p-2">Added</td>
-                        <td class="p-2">20-03-2023</td>
-                    </tr>
+                    @if ($count < 0)
+                        <tr>
+                            <td class="p-2 col-span-3">No data Yet</td>
+
+                        </tr>
+                    @else
+                        @foreach ($posts as $post)
+                            <tr>
+                                <td class="p-2">{{ $post->id }}</td>
+                                <td class="p-2">{{ $post->post }}</td>
+                                <td class="p-2">{{ $post->created_at }}</td>
+                            </tr>
+                        @endforeach
+                    @endif
                 </table>
             </div>
         </div>

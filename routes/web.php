@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,8 @@ Route::get('/dashboard', function () {
 Route::get('/index', function () {
     return view('index');
 });
-Route::get('/crud', function () {
-    return view('crud');
+
+Route::prefix('crud')->group(function () {
+    Route::get('/', [PostController::class, 'index']);
+    Route::post('/add', [PostController::class, 'store']);
 });
