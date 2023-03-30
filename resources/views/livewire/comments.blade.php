@@ -1,9 +1,9 @@
 <div>
     <div class="flex justify-center">
-        <input type="text" class="bg-white rounded-full p-4" wire:model='newComment'><button
+        <input type="text" class="bg-white rounded-full p-4" wire:model.lazy='newComment'><button
             class="m-4 bg-red-300 px-4 rounded-full" wire:click="addComment">Send</button>
     </div>
-
+{{{$newComment}}}
 
     <div class="pt-6 ">
         @foreach ($comments as $comment)
