@@ -14,3 +14,8 @@
 .btn {
     @apply rounded-full py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider
 }
+
+
+.food_detail_field{
+    @apply grid grid-cols-9 p-2
+}

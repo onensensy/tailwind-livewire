@@ -31,3 +31,16 @@ Route::prefix('crud')->group(function () {
     Route::get('/', [PostController::class, 'index']);
     Route::post('/add', [PostController::class, 'store']);
 });
+
+Route::get('/add_foods', function () {
+    return view('add_foods');
+});
+
+Route::get('learn', function () {
+
+    return view('learn');
+});
+Route::get('comments', function () {
+
+    return view('comments');
+});
