@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\XmlConfiguration\Groups;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +33,11 @@ Route::prefix('crud')->group(function () {
     Route::post('/add', [PostController::class, 'store']);
 });
 
-Route::get('/add_foods', function () {
-    return view('add_foods');
+Route::prefix('/foods')->group(function () {
+
+    Route::get('/add_foods', function () {
+        return view('add_foods');
+    });
 });
 
 Route::get('learn', function () {
