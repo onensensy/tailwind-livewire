@@ -16,9 +16,15 @@
             <h1 class="text-2xl text-white">Food Nutrients</h1>
             <nav class="mt-6">
                 <ul>
-                    <li class="text-white">Home</li>
-                    <li class="text-white">Add Food</li>
-                    <li class="text-white">Exit</li>
+                    <a href="/foods/add">
+                        <li class="text-white">Home</li>
+                    </a>
+                    <a href="/foods/add">
+                        <li class="text-white">Add Food</li>
+                    </a>
+                    <a href="/foods/add">
+                        <li class="text-white">Exit</li>
+                    </a>
                 </ul>
             </nav>
         </div>

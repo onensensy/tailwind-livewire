@@ -10,18 +10,26 @@ class AddFoods extends Component
     public $api_name;
     public $breakfast, $lunch, $dinner;
     public $main, $sauce, $side;
+    public $request_no = 0;
+
+    public $dummy = 0;
 
     public function sendData()
     {
-        dd($this->name, $this->breakfast);
+        do {
+            $this->dummy++;
+        } while ($this->dummy <= 50000000);
+        $this->request_no++;
+
+        $this->dummy = 0;
     }
 
     /**
      * View Raw format of the data received
      */
-    public function viewRaw(Type $var = null)
+    public function viewRaw()
     {
-        # code...
+        dd('Raw Response view: True');
     }
 
 

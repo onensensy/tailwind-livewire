@@ -35,7 +35,7 @@ Route::prefix('crud')->group(function () {
 
 Route::prefix('/foods')->group(function () {
 
-    Route::get('/add_foods', function () {
+    Route::get('/add', function () {
         return view('add_foods');
     });
 });
