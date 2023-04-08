@@ -2,7 +2,7 @@
 
 @section('title', 'Add Foods')
 
-@section('header-heading', 'Add Foods')
+@section('header-heading', 'Manage Foods')
 
 @section('main')
 
