@@ -113,6 +113,23 @@
                     </div>
                 </div>
                 <div class="food_detail_field">
+                    <div class="py-2 px-4 col-span-2 text-right"><label class="">Image:</label></div>
+                    @if ($request_no != 0)
+                        <img src="{{ url('images/food.jpg') }}"
+                            class="w-full h-32 sm:h-48 object-cover col-span-6 rounded-xl" alt="Stew">
+                    @else
+                        <div class="m-2 cols-span-6" wire:loading.class='hidden' wire:target='sendData'>
+                            <span class="p-1">No Data!</span>
+                        </div>
+                    @endif
+
+                    <div class="food_detail_field" wire:loading wire:target='sendData'>
+                        Loading ...
+                    </div>
+
+                </div>
+
+                <div class="food_detail_field">
                     <div class="py- px-4 col-span-2 text-right"><label class="">Nutrients:</label></div>
                     <div class="bg-white rounded-xl p-2 col-span-6">
 
