@@ -38,6 +38,10 @@ Route::prefix('/foods')->group(function () {
     Route::get('/add', function () {
         return view('add_foods');
     });
+
+    Route::get('/view', function () {
+        return view('view_foods');
+    });
 });
 
 Route::get('learn', function () {

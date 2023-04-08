@@ -4,8 +4,9 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class AddFoods extends Component
+class ViewFoods extends Component
 {
+
     public $name;
     public $api_name;
     public $breakfast, $lunch, $dinner;
@@ -36,9 +37,8 @@ class AddFoods extends Component
     }
 
 
-
     public function render()
     {
-        return view('livewire.add-foods');
+        return view('livewire.view-foods');
     }
 }
