@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 
 <head>
     <meta charset="UTF-8">
@@ -10,32 +10,36 @@
     @livewireStyles()
 </head>
 
-<body class="bg-gray-100">
-    <div class="grid grid-cols-10">
-        <div class=" p-4 bg-gray-900 col-span-2">
-            <h1 class="text-2xl text-white">Food Nutrients</h1>
-            <nav class="mt-6">
-                <ul>
-                    <a href="/foods/view">
-                        <li class="text-white">Home</li>
+<body class="bg-gray-100 h-full">
+    <div class="grid grid-cols-10 h-full">
+        <div class="pt-4 bg-gray-900 col-span-2 h-full "></div>
+        <div class="pt-4 bg-gray-900 col-span-2 h-full fixed z-10">
+            <h1 class="mx-6 text-3xl text-white">Food Nutrients</h1>
+            <nav>
+                <ul class="grid mt-6">
+                    <a href="/foods/view"
+                        class="rounded-l-full text-white p-4 hover:bg-white hover:text-gray-900 transition easein">
+                        <li class="">Home</li>
                     </a>
-                    <a href="/foods/add">
-                        <li class="text-white">Add Food</li>
+                    <a href="/foods/add"
+                        class="rounded-l-full text-white p-4 hover:bg-white hover:text-gray-900 transition easein">
+                        <li class="">Add Food</li>
                     </a>
-                    <a href="/">
-                        <li class="text-white">Exit</li>
+                    <a href="/"
+                        class="rounded-l-full text-white p-4 hover:bg-white hover:text-gray-900 transition easein">
+                        <li class="">Exit</li>
                     </a>
                 </ul>
             </nav>
         </div>
-        <div class=" bg-red-700 col-span-8">
-            <header class="bg-gray-700 flex justify-start">
-                <h1 class=" p-6 text-white text-xl">@yield('header-heading')</h1>
+        <div class="bg-white col-span-8 flex flex-col h-full">
+            <header class="bg-gray-700 flex justify-start h-16 fixed w-full z-10 top-0">
+                <h1 class="p-6 text-white text-xl">@yield('header-heading')</h1>
             </header>
-            @yield('main')
+            <div class="overflow-y-auto mt-16">
+                @yield('main')
+            </div>
         </div>
-
-
     </div>
     @livewireScripts
 </body>

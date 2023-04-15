@@ -18,7 +18,7 @@
                         placeholder="Enter api name to use..." wire:model.lazy='api_name'>
                 </div>
             </div>
-            <div class="food_detail_field">
+            {{-- <div class="food_detail_field">
                 <div class="py-2 px-4 col-span-2 text-right"><label class="">Category:</label></div>
                 <div class="bg-white rounded-full p-2 col-span-6 row-span-1">
                     <input type="checkbox" class="p-2 rounded-full"placeholder="Enter the name of the food..."
@@ -31,8 +31,8 @@
                         wire:model='dinner'>
                     <label class="uppercase pr-1" for="breakfast">Dinner</label>
                 </div>
-            </div>
-            <div class="food_detail_field">
+            </div> --}}
+            {{-- <div class="food_detail_field">
                 <div class="py-2 px-4 col-span-2 text-right"><label class="">Part:</label></div>
                 <div class="bg-white rounded-full p-2 col-span-6">
                     <input type="checkbox" class="p-2 rounded-full" placeholder="Enter the name of the food..."
@@ -45,7 +45,7 @@
                         wire:model='side'>
                     <label class="uppercase pr-1" for="breakfast">Side</label>
                 </div>
-            </div>
+            </div> --}}
             <div class="food_detail_field">
                 <div class="py-2 px-4 col-span-2 text-right"><label class="">Nutrients:</label></div>
                 <div class=" bg-white rounded-full p-2 col-span-6">
@@ -53,8 +53,8 @@
                         <button type="button"
                             class="rounded-full bg-gray-700 p-2 text-white  text-sm hover:bg-gray-600 transition easein"
                             wire:click='sendData'>Send Request</button>
-                        <div type="button" class="rounded-full bg-gray-200 p-2 text-gray-700  text-sm"
-                            wire:click='sendData'>Requests: {{ $request_no }}</div>
+                        <div type="button" class="rounded-full bg-gray-200 p-2 text-gray-700  text-sm">Requests:
+                            {{ $request_no }}</div>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                     </div>
                 </div>
 
-                <div class="food_detail_field">
+                {{-- <div class="food_detail_field">
                     <div class="py-2 px-4 col-span-2 text-right"><label class="">Category:</label></div>
                     <div class="bg-white rounded-full p-2 col-span-6">
                         @if ($breakfast == true)
@@ -111,7 +111,7 @@
                             <label class="uppercase px-1" for="breakfast">Side</label>
                         @endif
                     </div>
-                </div>
+                </div> --}}
                 <div class="food_detail_field">
                     <div class="py-2 px-4 col-span-2 text-right"><label class="">Image:</label></div>
                     @if ($request_no != 0)
