@@ -7,23 +7,20 @@ use Livewire\Component;
 class ViewFoods extends Component
 {
 
-    public $name;
-    public $api_name;
-    public $breakfast, $lunch, $dinner;
-    public $main, $sauce, $side;
+    public $name = 'Beans';
+    public $api_name = 'beans';
+    public $food_id = '1';
+    public $breakfast, $lunch = true, $dinner = true;
+    public $main, $sauce = true, $side = true;
     public $request_no = 0;
+
+    public $view = false;
 
     public $dummy = 0;
 
-    public function sendData()
+    public function viewData()
     {
-        $this->request_no++;
-        do {
-            $this->dummy++;
-        } while ($this->dummy <= 50000);
-
-
-        $this->dummy = 0;
+        $this->view = true;
     }
 
 
