@@ -21,7 +21,7 @@ class AddFoods extends Component
         $foods = new FoodsController;
 
         $food = $foods->getNutrients($this->api_name);
-        dd($food_nutrients = $food['0']);
+        $food_nutrients = $food['0'];
 
         $this->image = $food['1'];
         $this->calories = $food_nutrients['ENERC_KCAL'];
