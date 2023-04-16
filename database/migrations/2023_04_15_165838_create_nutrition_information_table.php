@@ -16,7 +16,6 @@ class CreateNutritionInformationTable extends Migration
         Schema::create('nutrition_information', function (Blueprint $table) {
             $table->id();
             $table->foreignId('food_id')->constrained('foods');
-            $table->string('serving_size');
             $table->integer('calories');
             $table->integer('protein');
             $table->integer('fat');

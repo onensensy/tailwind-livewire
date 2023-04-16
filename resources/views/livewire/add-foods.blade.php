@@ -115,8 +115,8 @@
                 <div class="food_detail_field">
                     <div class="py-2 px-4 col-span-2 text-right"><label class="">Image:</label></div>
                     @if ($request_no != 0)
-                        <img src="{{ url('images/food.jpg') }}"
-                            class="w-full h-32 sm:h-48 object-cover col-span-6 rounded-xl" alt="Stew">
+                        <img src="{{ $image }}" class="w-full h-32 sm:h-48 object-cover col-span-6 rounded-xl"
+                            alt="Stew">
                     @else
                         <div class="m-2 cols-span-6" wire:loading.class='hidden' wire:target='sendData'>
                             <span class="p-1">No Data!</span>
@@ -136,29 +136,23 @@
                         @if ($request_no != 0)
                             <div class="m-2">
                                 <span class="p-1">Calories:</span>
-                                <span class=" p-1 bg-red-100 rounded-full">123</span>
+                                <span class=" p-1 bg-red-100 rounded-full">{{ $calories }}</span>
                             </div>
                             <div class="m-2">
                                 <span class="p-1">Proteins:</span>
-                                <span class=" p-1 bg-red-100 rounded-full">123</span>
+                                <span class=" p-1 bg-red-100 rounded-full">{{ $proteins }}</span>
                             </div>
                             <div class="m-2">
                                 <span class="p-1">fat:</span>
-                                <span class=" p-1 bg-red-100 rounded-full">123</span>
+                                <span class=" p-1 bg-red-100 rounded-full">{{ $fat }}</span>
                             </div>
                             <div class="m-2">
                                 <span class="p-1">Cabohydrates:</span>
-                                <span class=" p-1 bg-red-100 rounded-full">123</span>
+                                <span class=" p-1 bg-red-100 rounded-full">{{ $carbohydrates }}</span>
                             </div>
                             <div class="m-2">
                                 <span class="p-1">Fibre:</span>
-                                <span class=" p-1 bg-red-100 rounded-full">123</span>
-                            </div>
-
-                            <div class="flex justify-end">
-                                <button class="text-gray-600 underline mr-4 hover:text-gray-900 transition easein"
-                                    wire:click='viewRaw'>View raw
-                                    form</button>
+                                <span class=" p-1 bg-red-100 rounded-full">{{ $fibre }}</span>
                             </div>
                         @else
                             <div class="m-2" wire:loading.class='hidden' wire:target='sendData'>
