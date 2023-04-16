@@ -7,12 +7,12 @@
 
             <table class="py-2 px-4 mx-8 col-span-2 text-left  border-b border-b-10 border-red-200">
                 <tr class="p-4 m-4 border-b border-b-10 border-red-200">
-                    <th class="p-4">ID</th>
-                    <th class="p-4">NAME</th>
-                    <th class="p-4">API NAME</th>
-                    <th class="p-4">IMAGE</th>
-                    <th class="p-4">NUTRIENTS</th>
-                    <th class="p-4">ACTIONS</th>
+                    <th class="px-4">ID</th>
+                    <th class="px-4">NAME</th>
+                    <th class="px-4">API NAME</th>
+                    <th class="px-4">IMAGE</th>
+                    <th class="px-4">NUTRIENTS</th>
+                    <th class="px-4">ACTIONS</th>
                 </tr>
 
                 <tr class=" py-4 hover:bg-gray-50 transition easein border-b border-b-10 border-red-200">
