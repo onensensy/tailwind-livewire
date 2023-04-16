@@ -5,12 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NutritionInformation extends Model
+class NutritionInformations extends Model
 {
 
     use HasFactory;
 
     protected $table = 'nutrition_informations';
+
+    protected $fillable = [
+        'food_id',
+        'calories',
+        'protein',
+        'fat',
+        'carbohydrates',
+        'fibre'
+    ];
 
     public function food()
     {

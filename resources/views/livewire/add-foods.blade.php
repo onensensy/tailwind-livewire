@@ -178,9 +178,17 @@
                             {{ $error }}
                         </button>
                     @else
-                        <button type="button"
-                            class="rounded-full bg-gray-700 mr-6 p-2 text-white hover:bg-gray-600 transition easein">Save
-                            Data</button>
+                        @if ($request_no != 0)
+                            <button type="button"
+                                class="rounded-full bg-gray-700 mr-6 p-2 text-white hover:bg-gray-600 transition easein"
+                                wire:click='saveFoodDetails'>Save
+                                Data</button>
+                        @else
+                            <div class="m-2 cols-span-6" wire:loading.class='hidden' wire:target='sendData'>
+                                <span class="p-1">No Data to save</span>
+                            </div>
+                        @endif
+
                     @endif
                 </div>
             </div>

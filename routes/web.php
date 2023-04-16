@@ -41,7 +41,7 @@ Route::prefix('/foods')->group(function () {
 
     Route::get('/view', function () {
         return view('view_foods');
-    });
+    })->name('view_foods');
 });
 
 Route::get('learn', function () {

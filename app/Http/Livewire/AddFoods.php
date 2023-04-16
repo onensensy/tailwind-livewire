@@ -56,10 +56,11 @@ class AddFoods extends Component
         return $food_nutrients;
     }
 
-    public function store()
+    public function saveFoodDetails()
     {
+        dd:
         array_push(
-            $this->food,
+            $this->food_details,
             [
                 'name' => $this->name,
                 'api_name' => $this->api_name,
@@ -72,8 +73,10 @@ class AddFoods extends Component
             ]
         );
 
-        // $status = FoodsController::store($this->food);
-        return $status;
+        $foods = new FoodsController;
+        $status = $foods->store($this->food_details['0']);
+
+        return route('view_foods');
     }
 
     public function render()

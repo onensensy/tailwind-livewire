@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
-use App\Models\NutritionInformation;
+use App\Models\NutritionInformations;
 use Illuminate\Http\Request;
 use Edamam\Api\FoodDatabase\FoodDatabase;
 use \Edamam\Api\FoodDatabase\FoodRequest;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
 
 class FoodsController extends Controller
@@ -42,23 +43,36 @@ class FoodsController extends Controller
     public function store($food_data)
     {
         DB::transaction(function () use ($food_data) {
+
+            // dd($food_data);
             $food = Food::create([
-                'name' => $food_data['local_name'],
+                'name' => $food_data['name'],
                 'api_name' => $food_data['api_name'],
                 'image' => $food_data['image'],
             ]);
+            try {
+                $nutrition = NutritionInformations::create([
+                    'food_id' => $food->id,
+                    'calories' => $food_data['calories'],
+                    'protein' => $food_data['protein'],
+                    'fat' => $food_data['fat'],
+                    'carbohydrates' => $food_data['carbohydrates'],
+                    'fibre' => $food_data['fibre'],
+                ]);
+            } catch (QueryException $e) {
+                $errorCode = $e->getCode();
+                $errorMessage = $e->getMessage();
 
-            $nutrition = NutritionInformation::create([
-                'food_id' => $food->id,
-                'calories' => $food_data['calories'],
-                'protein' => $food_data['protein'],
-                'fat' => $food_data['fat'],
-                'carbohydrates' => $food_data['carbohydrates'],
-                'fibre' => $food_data['minerals'],
-            ]);
+                if ($errorCode == '23000') {
+                    return 'SQL error: Duplicate Entry[This API name already has a database value]';
+                } else {
+                    return 'Error: ' . $errorMessage;
+                }
+            }
         });
 
-        return 'Success';
+        return route('view_foods');
+        // return 'Success';
     }
 
     /**
