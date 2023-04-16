@@ -112,8 +112,11 @@
                         @endif
                     </div>
                 </div> --}}
+
                 <div class="food_detail_field">
+
                     <div class="py-2 px-4 col-span-2 text-right"><label class="">Image:</label></div>
+
                     @if ($request_no != 0)
                         <img src="{{ $image }}" class="w-full h-32 sm:h-48 object-cover col-span-6 rounded-xl"
                             alt="Stew">
@@ -170,10 +173,15 @@
                 </div>
 
                 <div class="flex justify-end  items-center p-4">
-
-                    <button type="button"
-                        class="rounded-full bg-gray-700 mr-6 p-2 text-white hover:bg-gray-600 transition easein">Save
-                        Data</button>
+                    @if ($error != null)
+                        <button class="rounded-full bg-gray-700 mr-6 p-2 text-white hover:bg-gray-600 transition easein">
+                            {{ $error }}
+                        </button>
+                    @else
+                        <button type="button"
+                            class="rounded-full bg-gray-700 mr-6 p-2 text-white hover:bg-gray-600 transition easein">Save
+                            Data</button>
+                    @endif
                 </div>
             </div>
         </div>

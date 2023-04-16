@@ -19,8 +19,14 @@ class FoodsController extends Controller
      */
     public function getNutrients($food_api_name)
     {
-        FoodDatabase::setApiCredentials('974445c8', '278dce0393f8a92b0db4094b85e3af49');
-        $data1 = FoodRequest::find(['ingredient' => $food_api_name])->results()->first()->toArray();
+
+        try {
+            FoodDatabase::setApiCredentials('974445c8', '278dce0393f8a92b0db4094b85e3af49');
+            $data1 = FoodRequest::find(['ingredient' => $food_api_name])->results()->first()->toArray();
+        } catch (\Throwable $th) {
+            return 'No Data!';
+        }
+
         $image = $data1['image'];
         $food_nutrients = $data1['nutrients'];
         $nutrients = json_decode($food_nutrients, true);
