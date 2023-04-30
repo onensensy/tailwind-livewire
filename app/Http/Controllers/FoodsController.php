@@ -13,23 +13,33 @@ use Illuminate\Support\Facades\DB;
 class FoodsController extends Controller
 {
 
+
+    public function index(Food $food, NutritionInformations $nutrient)
+    {
+        $foods = $food->all();
+        $nutrients = $nutrient->all();
+
+        return view('view_foods', compact('foods', 'nutrients'));
+    }
+
+
     /**
      * Retrieve food nutrients
      * @param $food_api_name
-     * @return $result
+     *
      */
-    public function getNutrients($food_api_name)
+    public function getNutrients($food_api_name): array
     {
 
         try {
             FoodDatabase::setApiCredentials('974445c8', '278dce0393f8a92b0db4094b85e3af49');
-            $data1 = FoodRequest::find(['ingredient' => $food_api_name])->results()->first()->toArray();
+            $food = FoodRequest::find(['ingredient' => $food_api_name])->results()->first()->toArray();
         } catch (\Throwable $th) {
             return 'No Data!';
         }
 
-        $image = $data1['image'];
-        $food_nutrients = $data1['nutrients'];
+        $image = $food['image'];
+        $food_nutrients = $food['nutrients'];
         $nutrients = json_decode($food_nutrients, true);
 
         return [$nutrients, $image];
@@ -42,6 +52,7 @@ class FoodsController extends Controller
      */
     public function store($food_data)
     {
+        // dd($food_data);
         DB::transaction(function () use ($food_data) {
 
             // dd($food_data);
@@ -69,6 +80,13 @@ class FoodsController extends Controller
                     return 'Error: ' . $errorMessage;
                 }
             }
+
+
+            $categoryIds = $food_data['categories'];
+            $food->foodCategory()->attach($categoryIds);
+
+            $partIds = $food_data['parts'];
+            $food->foodParts()->attach($partIds);
         });
 
         return route('view_foods');
@@ -80,7 +98,11 @@ class FoodsController extends Controller
      * @param $id
      * @return True
      */
-    public function destroy($id)
+    public function destroy(Food $food, Request $request)
     {
+        // dd($request->delete);
+        DB::table('nutrition_informations')->where('food_id', $request->delete)->delete();
+        $item = $food->find($request->delete)->delete();
+        return redirect('/foods/view');
     }
 }

@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
-        });
+        //Labels has been removed for now
+        // Schema::create('food_labels', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('food_id')->constrained('foods')->onDelete('cascade');
+        //     $table->string('name', 255);
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::dropIfExists('food_labels');
     }
 };

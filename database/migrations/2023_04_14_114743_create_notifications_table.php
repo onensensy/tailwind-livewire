@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFoodsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateFoodsTable extends Migration
      */
     public function up()
     {
-        Schema::create('foods', function (Blueprint $table) {
+        Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('api_name', 255)->unique();
-            $table->text('image')->nullable();
+            $table->foreignId('user_id')->contrained('users');
+            $table->string('message');
+            $table->boolean('read_status');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateFoodsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('foods');
+        Schema::dropIfExists('notifications');
     }
-}
+};

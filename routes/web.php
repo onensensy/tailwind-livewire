@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoodsController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Groups;
@@ -38,10 +39,8 @@ Route::prefix('/foods')->group(function () {
     Route::get('/add', function () {
         return view('add_foods');
     });
-
-    Route::get('/view', function () {
-        return view('view_foods');
-    })->name('view_foods');
+    Route::get('/view', [FoodsController::class, 'index'])->name('view_foods');
+    Route::post('/delete', [FoodsController::class, 'destroy']);
 });
 
 Route::get('learn', function () {

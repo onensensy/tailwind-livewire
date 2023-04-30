@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Http\Controllers\FoodsController;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class AddFoods extends Component
@@ -13,8 +14,33 @@ class AddFoods extends Component
     public $calories, $proteins, $fat, $carbohydrates, $fibre;
     public $request_no = 0;
 
+    public $parts = [
+        ['id' => 1, 'name' => 'Main'],
+        ['id' => 2, 'name' => 'Sauce'],
+        ['id' => 3, 'name' => 'Side'],
+    ], $categories = [
+        ['id' => 1, 'name' => 'Breakfast'],
+        ['id' => 2, 'name' => 'Lunch'],
+        ['id' => 3, 'name' => 'Dinner'],
+    ];
+
+    public $selectedParts = [];
+    public $selectedCategories = [];
     public $error;
 
+    public function checkAPIname()
+    {
+
+        $wordExists = DB::table('foods')->where('api_name', $this->api_name)->exists();
+
+
+        if ($wordExists == true) {
+            $this->error = 'Food Exists';
+        } else {
+            $this->resetErrorBag('api_name');
+        }
+        // dd('OK');
+    }
 
     public $food_details = [];
 
@@ -53,12 +79,11 @@ class AddFoods extends Component
 
         $this->request_no++;
 
-        return $food_nutrients;
+        // return $food_nutrients;
     }
 
     public function saveFoodDetails()
     {
-        dd:
         array_push(
             $this->food_details,
             [
@@ -70,13 +95,15 @@ class AddFoods extends Component
                 'fat' => $this->fat,
                 'carbohydrates' => $this->carbohydrates,
                 'fibre' => $this->fibre,
+                'parts' => $this->selectedParts,
+                'categories' => $this->selectedCategories
             ]
         );
 
         $foods = new FoodsController;
         $status = $foods->store($this->food_details['0']);
 
-        return route('view_foods');
+        return redirect()->to('/foods/view');
     }
 
     public function render()

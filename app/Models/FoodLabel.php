@@ -5,20 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NutritionInformations extends Model
+class FoodLabel extends Model
 {
-
     use HasFactory;
 
-    protected $table = 'nutrition_information';
-
-    protected $fillable = [
+     protected $fillable = [
         'food_id',
-        'calories',
-        'protein',
-        'fat',
-        'carbohydrates',
-        'fibre'
+        'name',
     ];
 
     public function food()

@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('meal_items', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('password');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('role');
-            $table->rememberToken();
+            $table->foreignId('meal_id')->constrained('meals');
+            $table->foreignId('food_id')->constrained('foods');
+            $table->enum('food_part', ['main', 'side', 'sauce']);
             $table->timestamps();
+
+            // $table->unique(['meal_id', 'food_part']);
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('meal_items');
     }
 };
